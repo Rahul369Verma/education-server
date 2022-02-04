@@ -90,7 +90,11 @@ const inputsSchema = new mongoose.Schema({
   }
 }, { timestamps: true })
 
-const Input = mongoose.model('input', inputsSchema)//conversations = uses in database
+const Input = mongoose.model('input', inputsSchema)
+
+app.get("/", (req,res) => {
+  res.send("server is running")
+})//conversations = uses in database
 
 app.post("/api/formData", (req, res) => {
   const data = {
